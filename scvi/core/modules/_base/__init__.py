@@ -258,6 +258,7 @@ class Encoder(nn.Module):
             inject_covariates=inject_covariates,
             use_batch_norm=use_batch_norm,
             use_layer_norm=use_layer_norm,
+            activation_fn=nn.Tanh,
         )
         self.mean_encoder = nn.Linear(n_hidden, n_output)
         self.var_encoder = nn.Linear(n_hidden, n_output)
@@ -942,6 +943,7 @@ class EncoderTOTALVI(nn.Module):
             dropout_rate=dropout_rate,
             use_batch_norm=use_batch_norm,
             use_layer_norm=use_layer_norm,
+            activation_fn=nn.Tanh,
         )
         self.z_mean_encoder = nn.Linear(n_hidden, n_output)
         self.z_var_encoder = nn.Linear(n_hidden, n_output)
